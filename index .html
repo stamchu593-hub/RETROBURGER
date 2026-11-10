@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RETRO BURGER | 90s Vintage Burger</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --red: #a52a20;
+      --dark-red: #6f1d18;
+      --cream: #f4e5c2;
+      --yellow: #e5b83f;
+      --brown: #3b2117;
+      --orange: #c76b27;
+      --white: #fff8e8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Kanit", sans-serif;
+      background:
+        radial-gradient(#3b2117 0.7px, transparent 0.7px),
+        var(--cream);
+      background-size: 8px 8px;
+      color: var(--brown);
+    }
+
+    /* TOP BAR */
+
+    .top-bar {
+      background: var(--yellow);
+      color: var(--brown);
+      text-align: center;
+      padding: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      border-bottom: 3px solid var(--brown);
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: var(--red);
+      border-bottom: 4px solid var(--brown);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 15px 6%;
+    }
+
+    .logo {
+      color: var(--cream);
+      font-family: "Anton", sans-serif;
+      font-size: 32px;
+      letter-spacing: 2px;
+      text-shadow: 3px 3px 0 var(--brown);
+    }
+
+    .logo span {
+      color: var(--yellow);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--yellow);
+    }
+
+    .cart {
+      background: var(--yellow);
+      border: 3px solid var(--brown);
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 3px 3px 0 var(--brown);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 650px;
+      padding: 70px 7%;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+
+      background:
+        linear-gradient(
+          rgba(244,229,194,.92),
+          rgba(244,229,194,.92)
+        ),
+        url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1400&q=80");
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .retro-label {
+      display: inline-block;
+      background: var(--red);
+      color: var(--yellow);
+      padding: 7px 14px;
+      transform: rotate(-2deg);
+      border: 3px solid var(--brown);
+      box-shadow: 4px 4px 0 var(--brown);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: "Anton", sans-serif;
+      font-size: clamp(60px, 8vw, 105px);
+      line-height: .9;
+      text-transform: uppercase;
+      color: var(--red);
+
+      text-shadow:
+        5px 5px 0 var(--yellow),
+        9px 9px 0 var(--brown);
+
+      margin-bottom: 30px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      line-height: 1.8;
+      max-width: 520px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 25px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 3px solid var(--brown);
+      box-shadow: 5px 5px 0 var(--brown);
+      transition: .2s;
+    }
+
+    .btn:hover {
+      transform: translate(3px, 3px);
+      box-shadow: 2px 2px 0 var(--brown);
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .btn-secondary {
+      background: var(--yellow);
+      color: var(--brown);
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 580px;
+      display: block;
+
+      border: 6px solid var(--brown);
+      box-shadow: 15px 15px 0 var(--red);
+
+      transform: rotate(2deg);
+    }
+
+    .sticker {
+      position: absolute;
+      right: -10px;
+      bottom: -25px;
+
+      background: var(--yellow);
+
+      border: 4px solid var(--brown);
+      border-radius: 50%;
+
+      width: 125px;
+      height: 125px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+      font-weight: 700;
+
+      transform: rotate(12deg);
+
+      box-shadow: 5px 5px 0 var(--brown);
+    }
+
+    /* GENERAL SECTION */
+
+    section {
+      padding: 90px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title .small {
+      color: var(--red);
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .section-title h2 {
+      font-family: "Anton", sans-serif;
+      font-size: 55px;
+      color: var(--brown);
+      text-transform: uppercase;
+    }
+
+    .section-title p {
+      margin-top: 10px;
+    }
+
+    /* MENU */
+
+    #menu {
+      background: var(--red);
+      color: var(--white);
+      border-top: 5px solid var(--brown);
+      border-bottom: 5px solid var(--brown);
+    }
+
+    #menu .section-title h2 {
+      color: var(--cream);
+    }
+
+    #menu .section-title .small {
+      color: var(--yellow);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .menu-card {
+      background: var(--cream);
+      color: var(--brown);
+
+      border: 4px solid var(--brown);
+      box-shadow: 7px 7px 0 var(--brown);
+
+      overflow: hidden;
+      transition: .25s;
+    }
+
+    .menu-card:nth-child(even) {
+      transform: translateY(12px);
+    }
+
+    .menu-card:hover {
+      transform: translateY(-8px) rotate(-1deg);
+    }
+
+    .menu-img {
+      width: 100%;
+      height: 230px;
+
+      object-fit: cover;
+
+      border-bottom: 4px solid var(--brown);
+    }
+
+    .menu-content {
+      padding: 20px;
+    }
+
+    .menu-content h3 {
+      font-family: "Anton", sans-serif;
+      font-size: 27px;
+      color: var(--red);
+      margin-bottom: 8px;
+    }
+
+    .menu-content p {
+      min-height: 55px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .price {
+      font-family: "Anton", sans-serif;
+      font-size: 27px;
+      color: var(--brown);
+    }
+
+    .add-btn {
+      border: 3px solid var(--brown);
+      background: var(--yellow);
+      color: var(--brown);
+
+      padding: 9px 13px;
+
+      font-family: "Kanit", sans-serif;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      box-shadow: 3px 3px 0 var(--brown);
+    }
+
+    .add-btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 var(--brown);
+    }
+
+    /* CATEGORIES */
+
+    .categories {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .category {
+      padding: 9px 20px;
+
+      background: var(--cream);
+
+      border: 3px solid var(--brown);
+
+      color: var(--brown);
+
+      font-weight: 700;
+
+      cursor: pointer;
+
+      box-shadow: 3px 3px 0 var(--brown);
+    }
+
+    .category.active,
+    .category:hover {
+      background: var(--yellow);
+    }
+
+    /* PROMOTION */
+
+    .promotion {
+      background: var(--yellow);
+
+      border-top: 5px solid var(--brown);
+      border-bottom: 5px solid var(--brown);
+    }
+
+    .promo-box {
+      max-width: 1100px;
+      margin: auto;
+
+      background: var(--red);
+      color: var(--cream);
+
+      border: 5px solid var(--brown);
+
+      box-shadow: 10px 10px 0 var(--brown);
+
+      padding: 50px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      align-items: center;
+
+      gap: 30px;
+    }
+
+    .promo-box h2 {
+      font-family: "Anton", sans-serif;
+      font-size: 65px;
+      line-height: 1;
+      color: var(--yellow);
+    }
+
+    .promo-box p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin: 20px 0;
+    }
+
+    .promo-image img {
+      width: 100%;
+      height: 320px;
+
+      object-fit: cover;
+
+      border: 4px solid var(--cream);
+
+      transform: rotate(2deg);
+    }
+
+    /* ABOUT */
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 60px;
+
+      align-items: center;
+    }
+
+    .about-image img {
+      width: 100%;
+
+      border: 5px solid var(--brown);
+
+      box-shadow: 10px 10px 0 var(--red);
+
+      transform: rotate(-2deg);
+    }
+
+    .about-text h2 {
+      font-family: "Anton", sans-serif;
+      font-size: 55px;
+
+      color: var(--red);
+
+      line-height: 1;
+
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      line-height: 1.9;
+      margin-bottom: 15px;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 15px;
+
+      margin-top: 30px;
+    }
+
+    .fact {
+      text-align: center;
+
+      padding: 18px;
+
+      border: 3px solid var(--brown);
+
+      background: var(--yellow);
+    }
+
+    .fact strong {
+      display: block;
+
+      font-family: "Anton", sans-serif;
+
+      font-size: 30px;
+    }
+
+    /* REVIEWS */
+
+    .reviews {
+      background: var(--cream);
+
+      border-top: 4px dashed var(--brown);
+    }
+
+    .review-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 25px;
+    }
+
+    .review {
+      background: var(--white);
+
+      padding: 30px;
+
+      border: 4px solid var(--brown);
+
+      box-shadow: 6px 6px 0 var(--red);
+    }
+
+    .stars {
+      color: var(--orange);
+
+      font-size: 22px;
+
+      margin-bottom: 15px;
+    }
+
+    .review p {
+      line-height: 1.7;
+
+      margin-bottom: 15px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: var(--brown);
+
+      color: var(--cream);
+    }
+
+    .contact-wrapper {
+      max-width: 900px;
+
+      margin: auto;
+
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-family: "Anton", sans-serif;
+
+      font-size: 55px;
+
+      color: var(--yellow);
+    }
+
+    .contact p {
+      font-size: 18px;
+
+      margin: 15px 0 30px;
+    }
+
+    .contact-info {
+      display: flex;
+
+      justify-content: center;
+
+      gap: 20px;
+
+      flex-wrap: wrap;
+    }
+
+    .contact-card {
+      background: var(--red);
+
+      border: 3px solid var(--cream);
+
+      padding: 20px 30px;
+
+      min-width: 220px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--red);
+
+      color: var(--cream);
+
+      text-align: center;
+
+      padding: 30px;
+
+      border-top: 5px solid var(--brown);
+    }
+
+    footer .footer-logo {
+      font-family: "Anton", sans-serif;
+
+      font-size: 35px;
+
+      color: var(--yellow);
+    }
+
+    /* CART */
+
+    .cart-modal {
+      position: fixed;
+
+      inset: 0;
+
+      background: rgba(59, 33, 23, .75);
+
+      display: none;
+
+      align-items: center;
+
+      justify-content: center;
+
+      z-index: 2000;
+
+      padding: 20px;
+    }
+
+    .cart-modal.show {
+      display: flex;
+    }
+
+    .cart-box {
+      width: 100%;
+      max-width: 500px;
+
+      background: var(--cream);
+
+      border: 5px solid var(--brown);
+
+      box-shadow: 10px 10px 0 var(--red);
+
+      padding: 30px;
+    }
+
+    .cart-box h2 {
+      font-family: "Anton", sans-serif;
+
+      font-size: 40px;
+
+      color: var(--red);
+
+      margin-bottom: 20px;
+    }
+
+    #cartItems {
+      max-height: 300px;
+
+      overflow-y: auto;
+    }
+
+    .cart-item {
+      display: flex;
+
+      justify-content: space-between;
+
+      padding: 12px 0;
+
+      border-bottom: 2px dashed var(--brown);
+    }
+
+    .cart-total {
+      font-size: 22px;
+
+      font-weight: 700;
+
+      margin: 20px 0;
+
+      text-align: right;
+    }
+
+    .close-cart {
+      background: var(--brown);
+
+      color: var(--cream);
+
+      border: none;
+
+      padding: 10px 18px;
+
+      cursor: pointer;
+
+      font-family: "Kanit", sans-serif;
+    }
+
+    /* MOBILE */
+
+    .hamburger {
+      display: none;
+
+      font-size: 28px;
+
+      color: var(--cream);
+
+      cursor: pointer;
+    }
+
+    @media (max-width: 1000px) {
+
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        max-width: 600px;
+
+        margin: auto;
+      }
+
+      .about,
+      .promo-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      nav {
+        padding: 12px 5%;
+      }
+
+      .logo {
+        font-size: 26px;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background: var(--red);
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        padding: 25px;
+
+        border-bottom: 4px solid var(--brown);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .cart {
+        display: none;
+      }
+
+      .hero {
+        padding: 60px 5%;
+
+        min-height: auto;
+      }
+
+      .hero h1 {
+        font-size: 65px;
+      }
+
+      section {
+        padding: 65px 5%;
+      }
+
+      .section-title h2,
+      .about-text h2,
+      .contact h2 {
+        font-size: 43px;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-card:nth-child(even) {
+        transform: none;
+      }
+
+      .promo-box {
+        padding: 30px;
+      }
+
+      .promo-box h2 {
+        font-size: 48px;
+      }
+
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .facts {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    🍔 TODAY'S SPECIAL — BUY 2 BURGERS & GET FREE FRIES 🍟
+  </div>
+
+
+  <!-- NAVIGATION -->
+  <nav>
+
+    <div class="logo">
+      RETRO<span>BURGER</span>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      ☰
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+
+      <li>
+        <a href="#home">HOME</a>
+      </li>
+
+      <li>
+        <a href="#menu">MENU</a>
+      </li>
+
+      <li>
+        <a href="#promotion">PROMOTIONS</a>
+      </li>
+
+      <li>
+        <a href="#about">OUR STORY</a>
+      </li>
+
+      <li>
+        <a href="#contact">CONTACT</a>
+      </li>
+
+    </ul>
+
+    <button class="cart" onclick="openCart()">
+      🛒 CART (<span id="cartCount">0</span>)
+    </button>
+
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+
+    <div class="hero-text">
+
+      <span class="retro-label">
+        EST. 1995 • ORIGINAL BURGER
+      </span>
+
+      <h1>
+        GOOD<br>
+        BURGER<br>
+        GOOD<br>
+        TIMES!
+      </h1>
+
+      <p>
+        Handmade American-style burgers
+        inspired by the classic 90s diner.
+        Juicy beef, soft buns, crispy fries
+        and our secret homemade sauces.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#menu" class="btn btn-primary">
+          🍔 VIEW MENU
+        </a>
+
+        <a href="#about" class="btn btn-secondary">
+          OUR STORY →
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-image">
+
+      <img
+        src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=85"
+        alt="Classic Burger"
+      >
+
+      <div class="sticker">
+        100%<br>
+        HOMEMADE
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MENU -->
+  <section id="menu">
+
+    <div class="section-title">
+
+      <div class="small">
+        ★ OUR CLASSIC MENU ★
+      </div>
+
+      <h2>
+        BURGER MENU
+      </h2>
+
+      <p>
+        Pick your favorite retro-style meal.
+      </p>
+
+    </div>
+
+
+    <div class="categories">
+
+      <button class="category active">
+        ALL
+      </button>
+
+      <button class="category">
+        BURGERS
+      </button>
+
+      <button class="category">
+        SIDES
+      </button>
+
+      <button class="category">
+        DRINKS
+      </button>
+
+    </div>
+
+
+    <div class="menu-grid">
+
+
+      <!-- BURGER 1 -->
+
+      <div class="menu-card">
+
+        <img
+          class="menu-img"
+          src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+          alt="Classic Cheese Burger"
+        >
+
+        <div class="menu-content">
+
+          <h3>
+            CLASSIC CHEESE
+          </h3>
+
+          <p>
+            Juicy beef patty, cheddar cheese,
+            fresh lettuce, onions and our
+            classic house sauce.
+          </p>
+
+          <div class="price-row">
+
+            <span class="price">
+              ฿129
+            </span>
+
+            <button
+              class="add-btn"
+              onclick="addToCart('Classic Cheese',129)"
+            >
+              + ADD
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- BURGER 2 -->
+
+      <div class="menu-card">
+
+        <img
+          class="menu-img"
+          src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=800&q=80"
+          alt="Bacon Burger"
+        >
+
+        <div class="menu-content">
+
+          <h3>
+            BACON ATTACK
+          </h3>
+
+          <p>
+            Grilled beef, crispy bacon,
+            melted cheese and smoky BBQ sauce.
+          </p>
+
+          <div class="price-row">
+
+            <span class="price">
+              ฿159
+            </span>
+
+            <button
+              class="add-btn"
+              onclick="addToCart('Bacon Attack',159)"
+            >
+              + ADD
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- BURGER 3 -->
+
+      <div class="menu-card">
+
+        <img
+          class="menu-img"
+          src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=800&q=80"
+          alt="Double Stack Burger"
+        >
+
+        <div class="menu-content">
+
+          <h3>
+            DOUBLE STACK
+          </h3>
+
+          <p>
+            Two juicy beef patties,
+            double cheese and our signature sauce.
+          </p>
+
+          <div class="price-row">
+
+            <span class="price">
+              ฿189
+            </span>
+
+            <button
+              class="add-btn"
+              onclick="addToCart('Double Stack',189)"
+            >
+              + ADD
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- BURGER 4 -->
+
+      <div class="menu-card">
+
+        <img
+          class="menu-img"
+          src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=800&q=80"
+          alt="Crispy Chicken Burger"
+        >
+
+        <div class="menu-content">
+
+          <h3>
+            CRISPY CHICKEN
+          </h3>
+
+          <p>
+            Crispy fried chicken,
+            fresh vegetables and homemade mayo sauce.
+          </p>
+
+          <div class="price-row">
+
+            <span class="price">
+              ฿139
+            </span>
+
+            <button
+              class="add-btn"
+              onclick="addToCart('Crispy Chicken',139)"
+            >
+              + ADD
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- FRIES -->
+
+      <div class="menu-card">
+
+        <img
+          class="menu-img"
+          src="https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&w=800&q=80"
+          alt="French Fries"
+        >
+
+        <div class="menu-content">
+
+          <h3>
+            OLD SCHOOL FRIES
+          </h3>
+
+          <p>
+            Crispy golden fries,
+            lightly seasoned with classic salt.
+          </p>
+
+          <div class="price-row">
+
+            <span class="price">
+              ฿69
+            </span>
+
+            <button
+              class="add-btn"
+              onclick="addToCart('Old School Fries',69)"
+            >
+              + ADD
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ONION RINGS -->
+
+      <div class="menu-card">
+
+        <img
+          class="menu-img"
+          src="https://images.unsplash.com/photo-1525059696034-4967a7290028?auto=format&fit=crop&w=800&q=80"
+          alt="Onion Rings"
+        >
+
+        <div class="menu-content">
+
+          <h3>
+            ONION RINGS
+          </h3>
+
+          <p>
+            Crispy golden onion rings
+            served with our special dipping sauce.
+          </p>
+
+          <div class="price-row">
+
+            <span class="price">
+              ฿79
+            </span>
+
+            <button
+              class="add-btn"
+              onclick="addToCart('Onion Rings',79)"
+            >
+              + ADD
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- MILKSHAKE -->
+
+      <div class="menu-card">
+
+        <img
+          class="menu-img"
+          src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=800&q=80"
+          alt="Vanilla Milkshake"
+        >
+
+        <div class="menu-content">
+
+          <h3>
+            VANILLA SHAKE
+          </h3>
+
+          <p>
+            Thick and creamy vanilla milkshake
+            inspired by classic American diners.
+          </p>
+
+          <div class="price-row">
+
+            <span class="price">
+              ฿89
+            </span>
+
+            <button
+              class="add-btn"
+              onclick="addToCart('Vanilla Shake',89)"
+            >
+              + ADD
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- BROWNIE -->
+
+      <div class="menu-card">
+
+        <img
+          class="menu-img"
+          src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=800&q=80"
+          alt="Chocolate Brownie"
+        >
+
+        <div class="menu-content">
+
+          <h3>
+            CHOCOLATE BROWNIE
+          </h3>
+
+          <p>
+            Rich chocolate brownie
+            served warm for the perfect ending.
+          </p>
+
+          <div class="price-row">
+
+            <span class="price">
+              ฿79
+            </span>
+
+            <button
+              class="add-btn"
+              onclick="addToCart('Chocolate Brownie',79)"
+            >
+              + ADD
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROMOTION -->
+
+  <section class="promotion" id="promotion">
+
+    <div class="promo-box">
+
+      <div>
+
+        <div class="retro-label">
+          LIMITED DEAL
+        </div>
+
+        <h2>
+          90s<br>
+          COMBO
+        </h2>
+
+        <p>
+          Burger + crispy fries +
+          an ice-cold drink.
+          Everything you need in one classic combo.
+        </p>
+
+        <a href="#menu" class="btn btn-secondary">
+          GET THE COMBO
+        </a>
+
+      </div>
+
+
+      <div class="promo-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1000&q=80"
+          alt="Burger Combo"
+        >
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="about">
+
+      <div class="about-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1000&q=80"
+          alt="Retro Diner"
+        >
+
+      </div>
+
+
+      <div class="about-text">
+
+        <div class="retro-label">
+          OUR STORY
+        </div>
+
+        <h2>
+          BURGER<br>
+          SINCE 1995
+        </h2>
+
+        <p>
+          RETRO BURGER was born from our love
+          for classic American diners filled with
+          neon signs, old-school music and the
+          smell of freshly grilled burgers.
+        </p>
+
+        <p>
+          We brought that feeling back with
+          freshly made burgers, quality ingredients
+          and our own homemade sauces.
+        </p>
+
+
+        <div class="facts">
+
+          <div class="fact">
+            <strong>29+</strong>
+            YEARS
+          </div>
+
+          <div class="fact">
+            <strong>100%</strong>
+            FRESH
+          </div>
+
+          <div class="fact">
+            <strong>20+</strong>
+            MENU ITEMS
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- REVIEWS -->
+
+  <section class="reviews">
+
+    <div class="section-title">
+
+      <div class="small">
+        ★ CUSTOMER LOVE ★
+      </div>
+
+      <h2>
+        WHAT THEY SAY
+      </h2>
+
+    </div>
+
+
+    <div class="review-grid">
+
+      <div class="review">
+
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <p>
+          "The burger was amazing!
+          The whole restaurant feels like
+          stepping back into the 90s."
+        </p>
+
+        <strong>
+          — MINT
+        </strong>
+
+      </div>
+
+
+      <div class="review">
+
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <p>
+          "The beef is super juicy,
+          the fries are crispy,
+          and the old-school music is perfect."
+        </p>
+
+        <strong>
+          — JAMES
+        </strong>
+
+      </div>
+
+
+      <div class="review">
+
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <p>
+          "DOUBLE STACK is seriously good.
+          Big portion, great taste
+          and a really cool atmosphere."
+        </p>
+
+        <strong>
+          — PLOY
+        </strong>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="contact-wrapper">
+
+      <div class="retro-label">
+        COME SAY HI!
+      </div>
+
+      <h2>
+        FIND OUR BURGER
+      </h2>
+
+      <p>
+        Come grab a burger,
+        listen to 90s music
+        and enjoy our vintage diner atmosphere.
+      </p>
+
+
+      <div class="contact-info">
+
+        <div class="contact-card">
+          📍<br>
+          123 Retro Street<br>
+          Bangkok, Thailand
+        </div>
+
+        <div class="contact-card">
+          📞<br>
+          02-123-4567
+        </div>
+
+        <div class="contact-card">
+          🕐<br>
+          11:00 AM - 10:00 PM
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-logo">
+      RETRO BURGER
+    </div>
+
+    <p>
+      GOOD BURGER • GOOD TIMES • GOOD MEMORIES
+    </p>
+
+    <br>
+
+    <small>
+      © 2026 RETRO BURGER. ALL RIGHTS RESERVED.
+    </small>
+
+  </footer>
+
+
+  <!-- CART MODAL -->
+
+  <div class="cart-modal" id="cartModal">
+
+    <div class="cart-box">
+
+      <h2>
+        YOUR ORDER 🍔
+      </h2>
+
+      <div id="cartItems">
+        <p>
+          Your cart is empty.
+        </p>
+      </div>
+
+      <div class="cart-total">
+        TOTAL: ฿<span id="cartTotal">0</span>
+      </div>
+
+      <button
+        class="btn btn-primary"
+        onclick="checkout()"
+      >
+        CHECKOUT
+      </button>
+
+      <button
+        class="close-cart"
+        onclick="closeCart()"
+      >
+        CLOSE
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    let cart = [];
+
+
+    function addToCart(name, price) {
+
+      cart.push({
+        name: name,
+        price: price
+      });
+
+      updateCart();
+
+      alert(
+        name + " has been added to your cart!"
+      );
+
+    }
+
+
+    function updateCart() {
+
+      const count =
+        document.getElementById("cartCount");
+
+      const items =
+        document.getElementById("cartItems");
+
+      const total =
+        document.getElementById("cartTotal");
+
+      count.textContent = cart.length;
+
+
+      if (cart.length === 0) {
+
+        items.innerHTML =
+          "<p>Your cart is empty.</p>";
+
+        total.textContent = "0";
+
+        return;
+
+      }
+
+
+      let html = "";
+      let sum = 0;
+
+
+      cart.forEach(item => {
+
+        sum += item.price;
+
+        html += `
+          <div class="cart-item">
+
+            <span>
+              ${item.name}
+            </span>
+
+            <strong>
+              ฿${item.price}
+            </strong>
+
+          </div>
+        `;
+
+      });
+
+
+      items.innerHTML = html;
+
+      total.textContent = sum;
+
+    }
+
+
+    function openCart() {
+
+      document
+        .getElementById("cartModal")
+        .classList.add("show");
+
+    }
+
+
+    function closeCart() {
+
+      document
+        .getElementById("cartModal")
+        .classList.remove("show");
+
+    }
+
+
+    function checkout() {
+
+      if (cart.length === 0) {
+
+        alert(
+          "Please choose a menu item first!"
+        );
+
+        return;
+
+      }
+
+      alert(
+        "Thank you for your order! 🍔\n\n" +
+        "Checkout system is currently a demo."
+      );
+
+    }
+
+
+    function toggleMenu() {
+
+      document
+        .getElementById("navLinks")
+        .classList.toggle("active");
+
+    }
+
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(link => {
+
+        link.addEventListener(
+          "click",
+          () => {
+
+            document
+              .getElementById("navLinks")
+              .classList.remove("active");
+
+          }
+        );
+
+      });
+
+
+    document
+      .getElementById("cartModal")
+      .addEventListener(
+        "click",
+        function(e) {
+
+          if (e.target === this) {
+            closeCart();
+          }
+
+        }
+      );
+
+  </script>
+
+</body>
+</html>
